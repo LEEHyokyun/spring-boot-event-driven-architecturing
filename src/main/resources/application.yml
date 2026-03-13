@@ -8,7 +8,7 @@ eureka:
 
 spring:
   application:
-    name: msa-init
+    name: eureka
 #  datasource:
 #    url: jdbc:postgresql://localhost:5432/root
 #    driver-class-name: org.postgresql.Driver
