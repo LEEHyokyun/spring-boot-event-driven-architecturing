@@ -31,3 +31,20 @@
 > Why Spring Cloud
 - MSA 환경을 구성하는데 추상화된 인터페이스를 제공하여, 분산환경에 최적화된 여러 도구들을 지원한다.
 - K8S 인프라를 구축하는데 어려움이 있을 경우 차선책으로 고려해볼만한 환경이다.
+
+## 4. 통신환경
+
+| Docker Service  | Spring `application.name` (Container Name) | Host Port | Container Port | 비고                   |
+| --------------- | ------------------------------------------ | --------- | -------------- | -------------------- |
+| eureka          | eureka                                     | 8761      | 8761           | Service Registry     |
+| config-server   | config-server                              | 8888      | 8888           | Config Server        |
+| gateway         | gateway                                    | 8000      | 8000           | API Gateway          |
+| user-service    | user-service                               | 60000     | 60000          | User 서비스             |
+| order-service-1 | order-service                              | 60010     | 60010          | Order 인스턴스 1         |
+| order-service-2 | order-service                              | 60011     | 60011          | Order 인스턴스 2 (RR 대상) |
+| product-service | product-service                            | 60002     | 60002          | Product 서비스          |
+| kafka           | kafka                                      | 9092      | 9092           | Kafka Broker         |
+| rabbitmq        | rabbitmq                                   | 5672      | 5672           | AMQP 메시지 브로커         |
+| mysql-user      | mysql-user                                 | 3306      | 3306           | User DB              |
+| mysql-order     | mysql-order                                | 3307      | 3306           | Order DB             |
+| mysql-product   | mysql-product                              | 3308      | 3306           | Product DB           |
